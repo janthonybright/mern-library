@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const app = express();
 const routes = require('./routes');
 const mongoose = require("mongoose")
@@ -15,8 +15,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "./client/build")));
 }
 
-let MONGODB_URI = process.env.MONGODB_URI || "mongodb://spiritbr8ker:yellowisacolor1@ds129098.mlab.com:29098/heroku_80fhghtz"
-mongoose.connect(MONGODB_URI);
+let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
+mongoose.connect(MONGODB_URI).then(() => console.log("working mongo")).catch(err => console.log(err));
 
 // Define API routes here
 app.use(routes)

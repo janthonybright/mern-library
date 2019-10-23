@@ -11,7 +11,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.getBooks("Harry potter")
+        this.getBooks("Hunger")
     }
 
     handleInputChange = event => {
@@ -26,6 +26,7 @@ class Home extends Component {
     }
 
     saveBook = (save) => {
+        console.log(save)
         API.saveBook(save)
             .then(saved => console.log(saved))
             .catch(err => console.log(err))

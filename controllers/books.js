@@ -10,11 +10,12 @@ module.exports = {
   },
 
   create: function (req, res) {
+    console.log("hit back end")
     console.log(req.body)
     db.Books
       .create(req.body)
       .then(dbBook => res.json(dbBook))
-      .catch(err => res.status(507).json(err))
+      .catch(err => res.status(502).json(err))
   },
 
   update: (req, res) => {

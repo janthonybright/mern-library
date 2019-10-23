@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ResultCards from '../components/ResultCards/Index'
-import Search from '../components/Search/Index'
+import Search from '../components/Search/Index';
 import API from '../utils/API'
 
 class Saved extends Component {
