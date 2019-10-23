@@ -69,9 +69,9 @@ class Home extends Component {
                         key={results.id}
                         id={results.id}
                         title={results.volumeInfo.title}
-                        image={results.volumeInfo.imageLinks.thumbnail}
+                        image={results.volumeInfo.imageLinks.thumbnail && results.volumeInfo.imageLinks.thumbnail}
                         description={results.volumeInfo.description}
-                        author={results.volumeInfo.authors.join(", ")}
+                        author={results.volumeInfo.authors && results.volumeInfo.authors.join(", ")}
                         link={results.volumeInfo.infoLink}
                         bookControl={this.handleSave}
                         buttonText="Save"
